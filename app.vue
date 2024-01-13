@@ -1,4 +1,8 @@
 <template>
-  <div>Football!</div>
+  <nav>
+    <NuxtLink to="/">
+      Home
+    </NuxtLink>
+  </nav>
   <NuxtPage />
 </template>

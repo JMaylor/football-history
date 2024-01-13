@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/vue-query'
 
 const supabase = useTypedSupabaseClient()
 
-const { data } = useQuery({
+const { data: competitions } = useQuery({
   queryKey: ['competitions'],
   queryFn: async () => {
     const { data, error } = await supabase
@@ -19,5 +19,11 @@ const { data } = useQuery({
 
 <template>
   <h1>Competitions</h1>
-  <pre>{{ data }}</pre>
+  <NuxtLink
+    v-for="competition in competitions"
+    :key="competition.competition_code"
+    :to="`/competition/${competition.competition_code}`"
+  >
+    {{ competition.competition_code }}
+  </NuxtLink>
 </template>
