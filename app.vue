@@ -1,5 +1,4 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <div>Football!</div>
+  <NuxtPage />
 </template>

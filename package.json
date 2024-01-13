@@ -12,12 +12,16 @@
     "postinstall": "nuxt prepare",
     "update-types": "npx supabase gen types typescript --project-id akzqpsnmfiflhokihnuy --schema public > types/supabase.ts && && eslint types/supabase.ts --fix"
   },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.17.10"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",
     "@nuxtjs/supabase": "^1.1.5",
     "eslint": "npm:eslint-ts-patch@^8.56.0-0",
     "lint-staged": "^15.2.0",
     "nuxt": "^3.9.1",
+    "nuxt-typed-router": "^3.5.1",
     "simple-git-hooks": "^2.9.0",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
