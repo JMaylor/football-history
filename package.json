@@ -1,19 +1,31 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "update-types": "npx supabase gen types typescript --project-id akzqpsnmfiflhokihnuy --schema public > types/supabase.ts"
+    "update-types": "npx supabase gen types typescript --project-id akzqpsnmfiflhokihnuy --schema public > types/supabase.ts && && eslint types/supabase.ts --fix"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.6.2",
     "@nuxtjs/supabase": "^1.1.5",
+    "eslint": "npm:eslint-ts-patch@^8.56.0-0",
+    "lint-staged": "^15.2.0",
     "nuxt": "^3.9.1",
+    "simple-git-hooks": "^2.9.0",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
