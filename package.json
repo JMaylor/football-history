@@ -7,9 +7,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "update-types": "npx supabase gen types typescript --project-id akzqpsnmfiflhokihnuy --schema public > types/supabase.ts"
   },
   "devDependencies": {
+    "@nuxtjs/supabase": "^1.1.5",
     "nuxt": "^3.9.1",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
