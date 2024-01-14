@@ -15,8 +15,54 @@ const { data: table } = useQuery({
     return data
   },
 })
+
+const columns = [
+  {
+    key: 'team_name',
+    label: 'Team',
+  },
+  {
+    key: 'played',
+    label: 'P',
+  },
+  {
+    key: 'won',
+    label: 'W',
+  },
+  {
+    key: 'drawn',
+    label: 'D',
+  },
+  {
+    key: 'lost',
+    label: 'L',
+  },
+  {
+    key: 'goals_for',
+    label: 'GF',
+  },
+  {
+    key: 'goals_against',
+    label: 'GA',
+  },
+  {
+    key: 'goal_difference',
+    label: 'GD',
+  },
+  {
+    key: 'points',
+    label: 'Pts',
+  },
+]
 </script>
 
 <template>
-  {{ table }}
+  <UTable
+    :rows="table"
+    :columns="columns"
+  >
+    <template #points-data="{ row }">
+      {{ row.points }}<span class="text-red-500">{{ row.deductions === 0 ? '' : ` (-${row.deductions})` }}</span>
+    </template>
+  </UTable>
 </template>

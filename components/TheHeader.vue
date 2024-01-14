@@ -12,7 +12,7 @@ const isDark = computed({
 </script>
 
 <template>
-  <header class="border-b h-16 border-b-gray-200 dark:border-b-gray-800 sticky top-0 backdrop-blur-lg">
+  <header class="border-b h-16 border-b-gray-200 dark:border-b-gray-800 sticky top-0 backdrop-blur z-10">
     <UContainer class="p-4 flex items-center h-full">
       <span class="text-rose-500 mr-4 text-lg font-bold">Football</span>
       <nav class="flex space-x-2">
