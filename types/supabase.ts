@@ -259,6 +259,7 @@ export interface Database {
           p_season_id: number
         }
         Returns: {
+          pos: number
           team_name: string
           played: number
           won: number

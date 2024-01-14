@@ -18,6 +18,10 @@ const { data: table } = useQuery({
 
 const columns = [
   {
+    key: 'pos',
+    label: '#',
+  },
+  {
     key: 'team_name',
     label: 'Team',
   },
