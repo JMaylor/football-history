@@ -13,6 +13,7 @@
     "update-types": "npx supabase gen types typescript --project-id akzqpsnmfiflhokihnuy --schema public > types/supabase.ts && && eslint types/supabase.ts --fix"
   },
   "dependencies": {
+    "@nuxt/ui": "^2.12.0",
     "@tanstack/vue-query": "^5.17.10"
   },
   "devDependencies": {

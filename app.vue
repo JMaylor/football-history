@@ -1,8 +1,19 @@
+<script setup lang="ts">
+useHead({
+  title: 'Football',
+  htmlAttrs: {
+    lang: 'en',
+    class: 'overflow-y-scroll',
+  },
+  bodyAttrs: {
+    class: 'bg-gray-50 dark:bg-gray-900',
+  },
+})
+</script>
+
 <template>
-  <nav>
-    <NuxtLink to="/">
-      Home
-    </NuxtLink>
-  </nav>
-  <NuxtPage />
+  <TheHeader />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
