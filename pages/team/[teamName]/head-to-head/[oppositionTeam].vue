@@ -16,11 +16,70 @@ const { data: headToHead } = useQuery({
     return data
   },
 })
+
+const columns = [
+  {
+    key: 'fixture_date',
+    label: 'Date',
+  },
+  {
+    key: 'result',
+    label: 'Result',
+  },
+  {
+    key: 'home_team_name',
+    label: 'Home Team',
+  },
+  {
+    key: 'full_time_home_goals',
+    label: 'Home',
+  },
+  {
+    key: 'full_time_away_goals',
+    label: 'Away',
+  },
+  {
+    key: 'away_team_name',
+    label: 'Away Team',
+  },
+  {
+    key: 'competition_code',
+    label: 'Competition',
+  },
+  {
+    key: 'season_name',
+    label: 'Season',
+  },
+]
 </script>
 
 <template>
-  <div>{{ headToHead }}</div>
   <NuxtLink :to="`/team/${route.params.oppositionTeam}/head-to-head/${route.params.teamName}`">
     Switch Teams
   </NuxtLink>
+
+  <UTable
+    :rows="headToHead"
+    :columns="columns"
+  >
+    <template #result-data="{ row }">
+      <WDLRenderer
+        :main-team="route.params.teamName"
+        :row="row"
+      />
+    </template>
+
+    <template #competition_code-data="{ row }">
+      <NuxtLink
+        :to="`/competition/${row.competition_code}`"
+        class="text-primary flex items-center"
+      >
+        {{ row.competition_code }}
+        <UIcon
+          name="i-heroicons-link-16-solid"
+          class="ml-2 my-auto"
+        />
+      </NuxtLink>
+    </template>
+  </UTable>
 </template>
